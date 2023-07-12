@@ -1,0 +1,35 @@
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver=webdriver.Chrome()
+driver.get("https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_click")
+driver.maximize_window()
+driver.implicitly_wait(2)
+driver.switch_to.frame("iframeResult")
+text1=driver.find_element(By.XPATH,"/html/body/p[1]")
+text2=driver.find_element(By.XPATH,"/html/body/p[2]")
+text3=driver.find_element(By.XPATH,"/html/body/p[3]")
+textbook=text1.is_displayed()
+print("text is displayed:"+str(textbook))
+time.sleep(2)
+textbook=text2.is_displayed()
+print("text is displayed:"+str(textbook))
+time.sleep(2)
+textbook=text3.is_displayed()
+print("text is displayed:"+str(textbook))
+time.sleep(2)
+#Click textbox
+text1.click()
+textbook=text1.is_displayed()
+print("text is displayed:"+str(textbook))
+time.sleep(2)
+text2.click()
+textbook=text2.is_displayed()
+print("text is displayed:"+str(textbook))
+time.sleep(2)
+text3.click()
+textbook=text3.is_displayed()
+print("text is displayed:"+str(textbook))
+time.sleep(2)
